@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To do list VUE</title>
+</head>
+
+<body>
+    <div id="toDoListApp">
+        <div class="title"> {{title}}</div>
+        <div><input class="input" type="text" placeholder="your task" v-model="newTask"></div>
+        <div class="button_block"><button class="button" v-on:click="newTaskClick">{{ButtonText}}</button></div>
+        <div class="task" v-for="(task,id) in tasks">
+            <h3>{{id+1}}-{{task}} <span><button class="clear_btn" v-on:click="taskDelete">clear</button></span></h3>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
