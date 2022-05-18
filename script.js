@@ -1,4 +1,4 @@
-var app = new Vue({
+var App = new Vue({
     el: '#toDoListApp',
     data: {
         title: 'toDoListApp',
@@ -9,16 +9,31 @@ var app = new Vue({
     },
     methods: {
         newTaskClick: () => {
-            app.tasks.push(app.newTask);
-            app.newTask = "";
-            localStorage.setItem("memory", JSON.stringify(app.tasks))
+            App.tasks.push(App.newTask);
+            App.newTask = "";
+            localStorage.setItem("memory", JSON.stringify(App.tasks))
         },
         taskDelete: (id) => {
-            console.log("delete");
-            console.log(id);
-            console.log(app.tasks)
-            app.tasks.splice(id, 1)
-            localStorage.setItem("memory", JSON.stringify(app.tasks))
+            App.tasks.splice(id, 1)
+            localStorage.setItem("memory", JSON.stringify(App.tasks))
+        },
+        taskUp: (id) => {
+            let myArr = JSON.parse(localStorage.getItem("memory"))
+            let upItem = myArr[id];
+            let downItem = myArr[id - 1];
+            myArr[id - 1] = upItem;
+            myArr[id] = downItem;
+            localStorage.setItem("memory", JSON.stringify(myArr));
+            location.reload()
+        },
+        taskDown: (id) => {
+            let myArr = JSON.parse(localStorage.getItem("memory"))
+            let upItem = myArr[id];
+            let downItem = myArr[id + 1];
+            myArr[id + 1] = upItem;
+            myArr[id] = downItem;
+            localStorage.setItem("memory", JSON.stringify(myArr));
+            location.reload()
         }
     }
 })
