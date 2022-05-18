@@ -18,13 +18,15 @@ var App = new Vue({
             localStorage.setItem("memory", JSON.stringify(App.tasks))
         },
         taskUp: (id) => {
-            let myArr = JSON.parse(localStorage.getItem("memory"))
-            let upItem = myArr[id];
-            let downItem = myArr[id - 1];
-            myArr[id - 1] = upItem;
-            myArr[id] = downItem;
-            localStorage.setItem("memory", JSON.stringify(myArr));
-            location.reload()
+            if (id != 0) {
+                let myArr = JSON.parse(localStorage.getItem("memory"))
+                let upItem = myArr[id];
+                let downItem = myArr[id - 1];
+                myArr[id - 1] = upItem;
+                myArr[id] = downItem;
+                localStorage.setItem("memory", JSON.stringify(myArr));
+                location.reload()
+            }
         },
         taskDown: (id) => {
             let myArr = JSON.parse(localStorage.getItem("memory"))
@@ -33,7 +35,10 @@ var App = new Vue({
             myArr[id + 1] = upItem;
             myArr[id] = downItem;
             localStorage.setItem("memory", JSON.stringify(myArr));
-            location.reload()
+            location.reload();
+        },
+        taskDone: (target) => {
+            console.log(target.path[2])
         }
     }
 })
