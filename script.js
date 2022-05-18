@@ -5,6 +5,7 @@ var app = new Vue({
         ButtonText: 'Add new Task',
         newTask: "",
         tasks: JSON.parse(localStorage.getItem("memory")) || [],
+
     },
     methods: {
         newTaskClick: () => {
@@ -12,8 +13,12 @@ var app = new Vue({
             app.newTask = "";
             localStorage.setItem("memory", JSON.stringify(app.tasks))
         },
-        taskDelete: () => {
-            console.log("delete")
+        taskDelete: (id) => {
+            console.log("delete");
+            console.log(id);
+            console.log(app.tasks)
+            app.tasks.splice(id, 1)
+            localStorage.setItem("memory", JSON.stringify(app.tasks))
         }
     }
 })

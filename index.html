@@ -15,7 +15,7 @@
         <div><input class="input" type="text" placeholder="your task" v-model="newTask"></div>
         <div class="button_block"><button class="button" v-on:click="newTaskClick">{{ButtonText}}</button></div>
         <div class="task" v-for="(task,id) in tasks">
-            <h3>{{id+1}}-{{task}} <span><button class="clear_btn" v-on:click="taskDelete">clear</button></span></h3>
+            <h3 class="task_line">{{id+1}}-{{task}} <span><button class="clear_btn" v-on:click="taskDelete(id)">clear</button></span></h3>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>

@@ -45,3 +45,8 @@ body {
     color: antiquewhite;
     padding: 10px;
 }
+
+.task_line {
+    display: flex;
+    justify-content: space-between;
+}
