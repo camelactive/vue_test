@@ -25,7 +25,7 @@ var App = new Vue({
                 myArr[id - 1] = upItem;
                 myArr[id] = downItem;
                 localStorage.setItem("memory", JSON.stringify(myArr));
-                location.reload()
+                App.tasks = myArr
             }
         },
         taskDown: (id) => {
@@ -35,7 +35,7 @@ var App = new Vue({
             myArr[id + 1] = upItem;
             myArr[id] = downItem;
             localStorage.setItem("memory", JSON.stringify(myArr));
-            location.reload();
+            App.tasks = myArr
         },
         taskDone: (target) => {
             console.log(target.path[2])
