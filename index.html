@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div id="toDoListApp">
+    <div id="toDoListApp" v-on:keyup.enter="newTaskClick" v-on:keyup.tab="test">
         <div class="title"> {{title}}</div>
         <div><input class="input" type="text" placeholder="your task" v-model="newTask"></div>
         <h3 class="book" v-if="newTask !='' ">{{newTask}}</h3>
