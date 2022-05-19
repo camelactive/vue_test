@@ -37,7 +37,7 @@ var App = new Vue({
             localStorage.setItem("memory", JSON.stringify(myArr));
             App.tasks = myArr
         },
-        test() {
+        test:() => {
             console.log("test-TAB");
             App.tasks = ["Посрать", "Вытереть жопу", "Помыть руки", "Позвонить Андрюше", "Сходить в гудвин", "Попить кофе"]
         },
