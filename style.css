@@ -35,11 +35,6 @@ body {
     background-color: bisque;
 }
 
-.task {
-    background-color: rgb(17, 50, 17);
-    color: gold;
-}
-
 .clear_btn {
     background-color: red;
     font-size: 40px;
@@ -48,6 +43,8 @@ body {
 }
 
 .task_line {
+    background-color: rgb(12, 34, 121);
+    color: gold;
     display: flex;
     justify-content: space-between;
 }
@@ -67,8 +64,11 @@ body {
     height: 70px;
 }
 
-.check {
-    width: 40px;
-    height: 40px;
-    margin-top: 20%
+.check_btn {
+    background-color: green;
+    width: 80px;
+}
+
+.done {
+    margin: 50px;
 }

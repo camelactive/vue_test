@@ -18,20 +18,24 @@
         <div class="task" v-for="(task,id) in tasks">
             <h3 class="task_line">{{id+1}}-{{task}}
                 <span>
-                    <button class="up_btn" v-on:click="taskUp(id)">UP</button>
-                </span>
+                <button class="up_btn" v-on:click="taskUp(id)">UP</button>
+            </span>
                 <span>
-                    <button class="down_btn" v-on:click="taskDown(id)">Down</button>
-                </span>
-                <span><input class="check" type="checkbox" v-on:click="taskDone"></span>
+                <button class="down_btn" v-on:click="taskDown(id)">Down</button>
+            </span>
                 <span>
-                    <button class="clear_btn" v-on:click="taskDelete(id)">clear</button>
+                    <button class ="check_btn" v-on:click="taskDone(id) , taskDoneRander(id)">Complete</button>
+            </span>
+                <span>
+                <button class="clear_btn" v-on:click="taskDelete(id)">clear</button>
+                <span class="done">{{tasksDones[id]}}</span>
                 </span>
             </h3>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <script src="script.js"></script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
